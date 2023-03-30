@@ -66,7 +66,7 @@ TEST_CASE("Test number 5: ") {//"cheack players' cards after 10 turns"
    }
 
 
-   TEST_CASE("Test number 6: ") {//"cheack stacksize after 2 turns 
+   TEST_CASE("Test number 6: ") {//"cheack stacksize after 5 turns (what that raight in the demo)
     Player p1("Alice");
     Player p2("Bob");
     Game game(p1, p2);
@@ -75,4 +75,19 @@ TEST_CASE("Test number 5: ") {//"cheack players' cards after 10 turns"
     }
     CHECK(game.player1.stacksize() < 21 || game.player1.stacksize() == 21 );
     CHECK(game.player2.stacksize() < 21 || game.player2.stacksize() == 21 );
+   }
+   TEST_CASE("Test number 7: ") {
+    Player p1("Alice");
+    Player p2("Bob");
+    Game game(p1, p2);
+    CHECK_NOTHROW(game.playAll());
+    CHECK_NOTHROW(game.playTurn());
+    CHECK_NOTHROW(game.printWiner());
+    CHECK_NOTHROW(game.printLog());
+    CHECK_NOTHROW(game.printLastTurn());
+    CHECK_NOTHROW(game.printStats());
+    CHECK_NOTHROW(p1.cardesTaken());
+    CHECK_NOTHROW(p2.cardesTaken());
+    CHECK_NOTHROW(p1.stacksize());
+    CHECK_NOTHROW(p2.stacksize());
    }
