@@ -11,12 +11,12 @@ class Game{
     Game();
     Game(Player& p1,Player& p2);
     // operations
-    Card draw ( );
-    int playAll();
+    // Card draw ( );
+    void playAll();
     void printWiner();
     void printLog();
     void printStats();
     void printLastTurn();
-    int playTurn();
+    void playTurn();
 
 }
